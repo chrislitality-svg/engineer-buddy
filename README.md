@@ -1,3 +1,27 @@
+# engineer-buddy · 工程师搭子 🛠️
+
+> **Turn a fuzzy idea into a buildable spec — just by talking to it.**
+> 把脑子里的模糊想法，聊成可以直接动工的提案包。
+
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![Node](https://img.shields.io/badge/Node-proxy-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+**engineer-buddy** interviews you stage by stage — *discovery → scope → approach → plan → deliver* — and turns a vague product idea into a structured, exportable build proposal. It ships with a thin backend proxy so your LLM key never touches the browser, plus rate limiting and a daily cost circuit‑breaker.
+
+## ✨ Highlights
+- 🗣️ **Staged interview** — guided requirement clarification across 5 stages
+- 📦 **Exportable spec** — generates an OpenSpec proposal pack (ZIP) you can hand to a builder
+- 🔐 **Key‑hiding proxy** — LLM key stays server‑side; per‑minute rate limit + daily USD circuit‑breaker
+- 🧩 **Pluggable models** — Claude (Opus) when a key is set, DeepSeek fallback otherwise
+- 🎛️ **Admin console** — edit role prompts & manage conversations behind a login gate
+
+<sub>💡 想放张截图/GIF？把图片放进 `docs/` 再在这里插 `![demo](docs/demo.gif)`，审核一眼就懂。</sub>
+
+---
+
 # 工程师搭子（在线版）
 
 对话式需求澄清工具——把脑子里的模糊想法，聊成可以直接动工的提案包。
