@@ -1,0 +1,11 @@
+{
+  "name": "engineer-buddy",
+  "private": true,
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "dev:web": "npm -w @engineer-buddy/web run dev",
+    "dev:proxy": "npm -w @engineer-buddy/proxy run dev",
+    "build:web": "npm -w @engineer-buddy/web run build",
+    "start:proxy": "npm -w @engineer-buddy/proxy run start"
+  }
+}
