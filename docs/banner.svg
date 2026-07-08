@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="eb-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3F6BFF"/><stop offset="1" stop-color="#2C3EA8"/>
+    </linearGradient>
+    <pattern id="eb-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" stroke="#ffffff" stroke-width="1" opacity="0.10" fill="none"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="320" fill="url(#eb-bg)"/>
+  <rect width="1280" height="320" fill="url(#eb-grid)"/>
+  <circle cx="1120" cy="70" r="220" fill="#ffffff" opacity="0.06"/>
+
+  <!-- flow motif: idea bubble -> arrow -> spec doc -->
+  <g transform="translate(110,96)">
+    <!-- chat bubble -->
+    <rect x="0" y="20" width="118" height="86" rx="18" fill="#ffffff" opacity="0.16"/>
+    <path d="M28 106 l0 26 26 -26z" fill="#ffffff" opacity="0.16"/>
+    <circle cx="34" cy="63" r="7" fill="#DCE4FF"/><circle cx="59" cy="63" r="7" fill="#DCE4FF"/><circle cx="84" cy="63" r="7" fill="#DCE4FF"/>
+    <!-- arrow -->
+    <path d="M140 66 h64" stroke="#DCE4FF" stroke-width="6" stroke-linecap="round"/>
+    <path d="M198 52 l20 14 -20 14z" fill="#DCE4FF"/>
+    <!-- spec doc -->
+    <rect x="236" y="10" width="104" height="128" rx="12" fill="#ffffff"/>
+    <rect x="254" y="34" width="68" height="8" rx="4" fill="#3F6BFF"/>
+    <rect x="254" y="54" width="52" height="7" rx="3.5" fill="#9db2f0"/>
+    <rect x="254" y="72" width="68" height="7" rx="3.5" fill="#9db2f0"/>
+    <rect x="254" y="90" width="44" height="7" rx="3.5" fill="#9db2f0"/>
+    <path d="M255 114 l10 10 20 -22" stroke="#43C463" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(500,0)">
+    <text x="0" y="132" font-size="70" font-weight="800" fill="#ffffff">engineer-buddy</text>
+    <text x="4" y="176" font-size="25" fill="#E7ECFF" opacity="0.95">把模糊想法，聊成可以直接动工的提案包</text>
+    <text x="4" y="210" font-size="19" fill="#BFD0FF">Talk a fuzzy idea into a buildable, exportable spec</text>
+    <g font-size="17" font-weight="600">
+      <rect x="4" y="232" width="120" height="34" rx="17" fill="#ffffff" opacity="0.16"/><text x="64" y="254" fill="#EAF0FF" text-anchor="middle">TypeScript</text>
+      <rect x="134" y="232" width="150" height="34" rx="17" fill="#ffffff" opacity="0.16"/><text x="209" y="254" fill="#EAF0FF" text-anchor="middle">key-hiding proxy</text>
+      <rect x="294" y="232" width="168" height="34" rx="17" fill="#ffffff" opacity="0.16"/><text x="378" y="254" fill="#EAF0FF" text-anchor="middle">OpenSpec export</text>
+    </g>
+  </g>
+</svg>
