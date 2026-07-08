@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/banner.svg" alt="engineer-buddy banner" width="100%"></p>
+
 # engineer-buddy · 工程师搭子 🛠️
 
 > **Turn a fuzzy idea into a buildable spec — just by talking to it.**
