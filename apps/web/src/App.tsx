@@ -21,6 +21,14 @@ import { ConversationPanel } from './components/ConversationPanel'
 
 interface DisplayMsg { role: 'user' | 'assistant'; content: string }
 
+// fetch() 网络层失败（断网/连接被拒/CORS）统一抛 TypeError，浏览器措辞五花八门且是英文；
+// 服务端返回的错误（登录/限流/超时等）已经是中文 Error，原样透出即可
+function friendlyErrorMessage(e: unknown, fallback: string): string {
+  if (e instanceof TypeError) return '网络好像断了，检查一下网络重试'
+  if (e instanceof Error) return e.message || fallback
+  return fallback
+}
+
 // ── 主对话界面（三栏布局）────────────────────────────────────────────────────
 interface ChatViewProps {
   session: Session
@@ -164,7 +172,7 @@ export default function App() {
       setCurrentTurn(turn)
       setDisplayMsgs(prev => [...prev, { role: 'assistant', content: turn.message }])
     } catch (e) {
-      setError(e instanceof Error ? e.message : '出错了，请重试')
+      setError(friendlyErrorMessage(e, '出错了，请重试'))
     } finally {
       setLoading(false)
     }
@@ -181,7 +189,7 @@ export default function App() {
         return { ...prev, deliverables: { ...prev.deliverables, openspec_packs: [...prev.deliverables.openspec_packs, pack] } }
       })
     } catch (e) {
-      setError(e instanceof Error ? e.message : '提案包生成失败')
+      setError(friendlyErrorMessage(e, '提案包生成失败'))
     } finally {
       setPackGenerating(false)
     }
@@ -198,7 +206,7 @@ export default function App() {
         return { ...prev, deliverables: { ...prev.deliverables, checklists: [...prev.deliverables.checklists, checklist] } }
       })
     } catch (e) {
-      setError(e instanceof Error ? e.message : '验收清单生成失败')
+      setError(friendlyErrorMessage(e, '验收清单生成失败'))
     } finally {
       setChecklistGenerating(false)
     }
@@ -215,7 +223,7 @@ export default function App() {
         return { ...prev, deliverables: { ...prev.deliverables, foundations: [...prev.deliverables.foundations, report] } }
       })
     } catch (e) {
-      setError(e instanceof Error ? e.message : '地基体检生成失败')
+      setError(friendlyErrorMessage(e, '地基体检生成失败'))
     } finally {
       setFoundationGenerating(false)
     }

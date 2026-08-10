@@ -177,7 +177,7 @@ export function ConversationPanel({
               }}
             >
               <IconPackage size={16} />
-              {packGenerating ? '生成中（约 30–90 秒）…' : '生成提案包 · 给程序员/AI 照着做'}
+              {packGenerating ? '生成中（约 1–3 分钟，别关页面）…' : '生成提案包 · 给程序员/AI 照着做'}
             </button>
             <button
               onClick={onGenerateFoundation}
@@ -192,7 +192,7 @@ export function ConversationPanel({
               }}
             >
               <IconShield size={15} />
-              {foundationGenerating ? '体检中（约 30–90 秒）…' : '地基体检 · 扫出你看不见的隐患'}
+              {foundationGenerating ? '体检中（约 1–3 分钟，别关页面）…' : '地基体检 · 扫出你看不见的隐患'}
             </button>
             <button
               onClick={onGenerateChecklist}
@@ -207,7 +207,7 @@ export function ConversationPanel({
               }}
             >
               <IconClipboardCheck size={14} />
-              {checklistGenerating ? '生成中…' : '再来一份 · 给你自己核对的验收清单'}
+              {checklistGenerating ? '生成中（约 1–3 分钟）…' : '再来一份 · 给你自己核对的验收清单'}
             </button>
             <div style={{ fontSize: 10.5, color: 'var(--ink-400)', textAlign: 'center', lineHeight: 1.6, marginTop: 8 }}>
               生成后都显示在中间画板"打包交付"卡片里

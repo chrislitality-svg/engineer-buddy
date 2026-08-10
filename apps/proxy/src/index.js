@@ -212,7 +212,7 @@ const server = createServer(async (req, res) => {
     send(res, 500, { error: 'DEEPSEEK_API_KEY 未配置' }); return
   }
 
-  const timeoutMs = scope === 'deliver' ? 180_000 : 60_000
+  const timeoutMs = scope === 'deliver' ? 240_000 : 60_000
   const ctrl = new AbortController()
   const timer = setTimeout(() => ctrl.abort(), timeoutMs)
 
