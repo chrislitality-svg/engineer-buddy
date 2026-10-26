@@ -34,16 +34,13 @@
 # 安装依赖
 npm install
 
-# 复制环境变量模板并填入 Key
-cp .env.example .env
-# 编辑 .env，填入 DEEPSEEK_API_KEY
-
 # 启动开发服务器（前端 :3000 + 代理 :3001）
-npm run dev:web &
-npm run dev:proxy
+# 代理只读进程环境变量（仓库未带 .env 模板，也没有 dotenv 加载）
+DEEPSEEK_API_KEY=你的key npm run dev:proxy &
+npm run dev:web
 ```
 
-浏览器打开 http://localhost:3000，选择"做软件"或"大家电直播带货"开始对话。
+浏览器打开 http://localhost:3000，选择一位搭子（产品经理 / 技术架构师 / 体验设计师 / 交付负责人）开始对话。
 
 ## 使用产出的提案包
 
@@ -88,7 +85,10 @@ npx -y @fission-ai/openspec validate my-project --strict
 
 | 变量 | 默认值 | 说明 |
 |---|---|---|
-| `DEEPSEEK_API_KEY` | 必填 | DeepSeek V4 API Key |
+| `DEEPSEEK_API_KEY` | 必填 | DeepSeek API Key（无 Claude Key 时的工作模型） |
+| `CLAUDE_API_KEY` | 空 | 设置后 chat 阶段走 Claude（claude-opus-4-8），未设置降级 DeepSeek |
+| `EB_ADMIN_PASSWORD` | `change_me` | 管理后台登录口令，生产部署务必改掉默认值 |
+| `EB_ROLES_FILE` | `./data/eb-roles.json` | 管理后台维护的角色配置文件路径 |
 | `PROXY_PORT` | 3001 | 代理监听端口 |
 | `DAILY_LIMIT_USD` | 5 | 日花费熔断（美元），超出返回 503 |
 | `RATE_RPM` | 20 | 每 IP 每分钟请求限制 |
