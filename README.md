@@ -116,7 +116,7 @@ location /hb/engineer-buddy/ {
 
 location /api/chat {
     proxy_pass http://127.0.0.1:3001;
-    proxy_read_timeout 200s;
+    proxy_read_timeout 240s;
 }
 ```
 
@@ -147,7 +147,6 @@ engineer-buddy/
 │   └── proxy/        # 极薄 Node 代理（藏 Key + 限流 + 路由）
 ├── openspec/
 │   └── changes/      # 导出的提案包放这里，每个子目录一个 change
-└── .env              # 本地环境变量（不入 git）
 ```
 
 ## 单元测试
